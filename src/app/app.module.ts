@@ -7,6 +7,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PagecontentComponent } from './pagecontent/pagecontent.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PagecontentComponent } from './pagecontent/pagecontent.component';
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    PagecontentComponent
+    PagecontentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule
