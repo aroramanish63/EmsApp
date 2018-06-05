@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS category (
     `deleted` TINYINT(1) DEFAULT '0',
     `decription` TEXT DEFAULT NULL,
     `status` CHAR(10) DEFAULT 'Active' COMMENT 'Active, Inactive',
-    PRIMARY KEY(id)
+    PRIMARY KEY(category_id)
 );
 
 CREATE TABLE IF NOT EXISTS subcategory (
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS subcategory (
     `decription` TEXT DEFAULT NULL,
     `category_id` CHAR(36) DEFAULT NULL,
     `status` CHAR(10) DEFAULT 'Active' COMMENT 'Active, Inactive',
-    PRIMARY KEY(id)
+    PRIMARY KEY(subcategory_id)
 );
 
 CREATE TABLE IF NOT EXISTS payment (
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS payment (
     `amount` DOUBLE DEFAULT '0',
     `subcategory_id` CHAR(36) DEFAULT NULL,
     `status` CHAR(10) DEFAULT 'Active' COMMENT 'Active, Inactive',
-    PRIMARY KEY(id)
+    PRIMARY KEY(payment_id)
 );
 
 CREATE TABLE IF NOT EXISTS users (
@@ -55,15 +55,15 @@ CREATE TABLE IF NOT EXISTS users (
     `created_by` CHAR(36) DEFAULT NULL,
     `modified_by` CHAR(36) DEFAULT NULL,
     `deleted` TINYINT(1) DEFAULT '0',
-    `username` VARCHAR(255) DEFAULT NOT NULL,
-    `userhash` VARCHAR(255) DEFAULT NOT NULL,
+    `username` VARCHAR(255) DEFAULT NULL,
+    `userhash` VARCHAR(255) DEFAULT NULL,
     `first_name` VARCHAR(255) DEFAULT NULL,
     `last_name` VARCHAR(255) DEFAULT NULL,
-    `email_address` VARCHAR(50) DEFAULT NOT NULL,
+    `email_address` VARCHAR(50) DEFAULT NULL,
     `mobile_no` BIGINT(12),
     `login_mode` TINYINT(5) DEFAULT '0' COMMENT '0=>Email, 1=>Gmail, 2=>Facebook',
     `login_from_where` CHAR(15) DEFAULT 'Web' COMMENT 'Web, Mobile',
     `last_login` DATETIME DEFAULT NULL,
     `status` CHAR(10) DEFAULT 'Active' COMMENT 'Active, Inactive',
-    PRIMARY KEY(id)
+    PRIMARY KEY(users_id)
 );
