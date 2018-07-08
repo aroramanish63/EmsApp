@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppGlobals } from './app.globals';
+import { AuthGuard } from './_guards/auth.guard';
 
 
 
@@ -29,7 +31,10 @@ import { DynamicMenuComponent } from './dynamic-menu/dynamic-menu.component';
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    AppGlobals,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
