@@ -15,6 +15,7 @@ import { appRoutes } from './app.routes'
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DynamicMenuComponent } from './dynamic-menu/dynamic-menu.component';
+import { AlertComponent } from './_directives/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DynamicMenuComponent } from './dynamic-menu/dynamic-menu.component';
     PagecontentComponent,
     LoginComponent,
     HomeComponent,
-    DynamicMenuComponent
+    DynamicMenuComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
