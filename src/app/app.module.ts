@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DynamicMenuComponent } from './dynamic-menu/dynamic-menu.component';
 import { AlertComponent } from './_directives/alert/alert.component';
+import { AuthrizationService } from './_services/authrization.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AlertComponent } from './_directives/alert/alert.component';
   ],
   providers: [
     AppGlobals,
-    AuthGuard
+    AuthGuard,
+    AuthrizationService
   ],
   bootstrap: [AppComponent]
 })

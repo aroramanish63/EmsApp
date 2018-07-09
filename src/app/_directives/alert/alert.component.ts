@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from '../../_services/alert.service';
 
 @Component({
   moduleId: module.id,
@@ -9,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class AlertComponent {
 
   message:any;
-  constructor() { }
+  constructor(private alertService:AlertService) {}
 
   ngOnInit() {
+    this.alertService.getMessage().subscribe(message => { this.message = message; });
   }
 
 }
