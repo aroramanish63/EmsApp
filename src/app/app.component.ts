@@ -11,9 +11,10 @@ export class AppComponent {
 
   constructor(private renderer: Renderer2, private location:Location){
     renderer.removeClass(document.body, document.body.className);
-    if(location.path() !== '')
+    if(localStorage.length > 0)
       renderer.addClass(document.body, 'nav-md');
     else
       renderer.addClass(document.body, 'login');
+    // [ngClass]="{'nav-md':localStorage.length > 0, 'login':localStorage.length = 0}"
   }
 }
