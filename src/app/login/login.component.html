@@ -4,17 +4,21 @@
 
       <div class="login_wrapper">
         <div class="animate form login_form">
+            <app-alert></app-alert>
           <section class="login_content">
             <form #f="ngForm" novalidate name="form" (ngSubmit)="f.form.valid && onLogin()">
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required name="username" #username="ngModel" [(ngModel)] = "model.username" />
+                <input type="text" class="form-control" placeholder="Username" required name="username" #username="ngModel" [(ngModel)] = "model.username" [ngClass]="{'parsley-error':f.submitted && !username.valid}" />
+                <ul class="parsley-errors-list filled" *ngIf="f.submitted && !username.valid"><li class="parsley-required" style="text-align: left;">Username field is Required.</li></ul>
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required name="password" #password="ngModel" [(ngModel)] = "model.password" />
+                <input type="password" class="form-control" placeholder="Password" required name="password" #password="ngModel" [(ngModel)] = "model.password" [ngClass]="{'parsley-error':f.submitted && !password.valid}" />
+                <ul class="parsley-errors-list filled" *ngIf="f.submitted && !password.valid"><li class="parsley-required" style="text-align: left;">Password field is Required.</li></ul>
               </div>
               <div>
-                <button class="btn btn-default submit" type="submit">Log in</button>
+                <button [disabled]="loading" class="btn btn-default submit" type="submit">Log in</button>
+                <img src="assets/images/loading.gif" *ngIf="loading" >
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 

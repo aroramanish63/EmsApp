@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AuthrizationService } from '../_services/authrization.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AlertService } from '../_services/alert.service';
+import { Users } from '../_models/users';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   model:any = {};
   loading:boolean = false;
   returnUrl: string;
+  user:Users;
 
   constructor(
     private renderer:Renderer2, 
@@ -39,7 +41,16 @@ export class LoginComponent implements OnInit {
     .subscribe(data=>{
       console.log("In Login Component");
       console.log(data);
-      this.router.navigate([this.returnUrl]);
+      // data = JSON.parse(data);
+      if(data.number == 200){
+        this.router.navigate([this.returnUrl]);  
+      }
+      else{
+        this.loading = false;
+        this.alert.error(data.description);
+        return false;
+      }
+      
     },
     error=>{
       this.alert.error(error);

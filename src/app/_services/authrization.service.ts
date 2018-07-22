@@ -14,7 +14,7 @@ export class AuthrizationService {
   login(user:string,pass:string){
     console.log("In login service");
     console.log(user);
-console.log(this.appglobal);
+    console.log(this.appglobal);
     // let headers = new HttpHeaders();
     //headers = headers.append('Access-Control-Allow-Origin', '*');
 //    headers = headers.append("Accept","application/json");
@@ -42,8 +42,8 @@ let postdata = {
       console.log(user.number);
       if(user.number == 200){
         localStorage.setItem('currentUser',JSON.stringify(user));
-        return user;
       }
+      return user;
     });
   }
 
