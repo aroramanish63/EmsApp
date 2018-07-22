@@ -14,7 +14,7 @@ export class AuthrizationService {
   login(user:string,pass:string){
     console.log("In login service");
     console.log(user);
-console.log(this.appglobal);
+    console.log(this.appglobal);
     // let headers = new HttpHeaders();
     //headers = headers.append('Access-Control-Allow-Origin', '*');
 //    headers = headers.append("Accept","application/json");
@@ -39,11 +39,11 @@ let postdata = {
   console.log(this.createPostUrl(postdata));
     return this.httpclient.post<any>(this.appglobal.requestUrl,this.createPostUrl(postdata),httpOptions)
     .map(user=>{
-      //console.log(user.number);
+      console.log(user.number);
       if(user.number == 200){
         localStorage.setItem('currentUser',JSON.stringify(user));
-        return user;
       }
+      return user;
     });
   }
 
