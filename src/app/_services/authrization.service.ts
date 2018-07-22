@@ -12,6 +12,9 @@ export class AuthrizationService {
   constructor(private httpclient:HttpClient, private appglobal:AppGlobals) { }
 
   login(user:string,pass:string){
+    console.log("In login service");
+    console.log(user);
+console.log(this.appglobal);
     return this.httpclient.post<any>(this.appglobal.requestUrl,{action:'login',username:user,password:pass})
     .map(user=>{
       if(user.number == 200){

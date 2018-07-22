@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppGlobals } from './app.globals';
 import { AuthGuard } from './_guards/auth.guard';
 
@@ -16,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DynamicMenuComponent } from './dynamic-menu/dynamic-menu.component';
 import { AlertComponent } from './_directives/alert/alert.component';
+import { AlertService } from './_services/alert.service';
 import { AuthrizationService } from './_services/authrization.service';
 
 @NgModule({
@@ -32,12 +35,15 @@ import { AuthrizationService } from './_services/authrization.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AppGlobals,
     AuthGuard,
-    AuthrizationService
+    AuthrizationService,
+    AlertService
   ],
   bootstrap: [AppComponent]
 })

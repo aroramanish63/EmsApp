@@ -7,7 +7,7 @@ import { DynamicMenuComponent } from './dynamic-menu/dynamic-menu.component';
         export const appRoutes:Routes = [
             { path: '', component:LoginComponent },
             { path: 'home', component:HomeComponent},
-            { path: 'MyMenu', component:DynamicMenuComponent},
+           // { path: 'MyMenu', component:DynamicMenuComponent},
             { path: '**', redirectTo:'/'}
         ];
     
