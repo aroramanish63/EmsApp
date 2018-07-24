@@ -20,6 +20,7 @@ import { DynamicMenuComponent } from './dynamic-menu/dynamic-menu.component';
 import { AlertComponent } from './_directives/alert/alert.component';
 import { AlertService } from './_services/alert.service';
 import { AuthrizationService } from './_services/authrization.service';
+import { ExpensecategoryComponent } from './expensecategory/expensecategory.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AuthrizationService } from './_services/authrization.service';
     LoginComponent,
     HomeComponent,
     DynamicMenuComponent,
-    AlertComponent
+    AlertComponent,
+    ExpensecategoryComponent
   ],
   imports: [
     BrowserModule,

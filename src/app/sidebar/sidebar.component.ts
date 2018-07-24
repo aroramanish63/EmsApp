@@ -9,7 +9,16 @@ export class SidebarComponent implements OnInit {
 
   selected:any;
   showDiv:boolean = false;
-  constructor() { }
+  public FullName:string;
+  constructor() {
+    if(localStorage.length>0){
+    let userObj=JSON.parse(localStorage.getItem('currentUser'));
+    console.log(userObj);
+    this.FullName=userObj.Users.first_name+ ' '+userObj.Users.last_name;
+    }
+    else
+     this.FullName="No Name";
+   }
 
   ngOnInit() {
   }

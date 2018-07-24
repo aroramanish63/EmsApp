@@ -24,11 +24,13 @@ export class LoginComponent implements OnInit {
     private route:ActivatedRoute,
     private alert:AlertService
   ) {
+    localStorage.clear();
       renderer.removeClass(document.body, document.body.className);
       renderer.addClass(document.body, 'login');
    }
 
   ngOnInit() {
+    
     this.authservice.logout();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
   }
