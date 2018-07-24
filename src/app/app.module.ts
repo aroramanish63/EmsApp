@@ -21,6 +21,7 @@ import { AlertComponent } from './_directives/alert/alert.component';
 import { AlertService } from './_services/alert.service';
 import { AuthrizationService } from './_services/authrization.service';
 import { ExpensecategoryComponent } from './expensecategory/expensecategory.component';
+import { MasterLayoutComponent } from './master-layout/master-layout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ExpensecategoryComponent } from './expensecategory/expensecategory.comp
     HomeComponent,
     DynamicMenuComponent,
     AlertComponent,
-    ExpensecategoryComponent
+    ExpensecategoryComponent,
+    MasterLayoutComponent
   ],
   imports: [
     BrowserModule,

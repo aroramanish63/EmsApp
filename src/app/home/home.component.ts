@@ -8,7 +8,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor(private renderer:Renderer2) {
-
+   
     renderer.removeClass(document.body, document.body.className);
     if(localStorage.length > 0)
       renderer.addClass(document.body, 'nav-md');

@@ -27,12 +27,15 @@ export class LoginComponent implements OnInit {
     localStorage.clear();
       renderer.removeClass(document.body, document.body.className);
       renderer.addClass(document.body, 'login');
+
+      this.router.navigate([{ outlets: { bookPopup: [ 'update-book' ] }}]); 
    }
 
   ngOnInit() {
     
     this.authservice.logout();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
+
   }
 
   onLogin(){

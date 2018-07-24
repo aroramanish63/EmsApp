@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ExpensecategoryComponent implements OnInit {
 
   constructor() { 
-
+alert('Hello');
   }
 
   ngOnInit() {
