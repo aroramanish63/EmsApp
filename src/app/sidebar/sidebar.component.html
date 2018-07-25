@@ -25,7 +25,8 @@
         <div class="menu_section">
           <h3>General</h3>
           <ul class="nav side-menu">
-            <li (click)="onSelect('Home');" [ngClass]="{'active':isActiveClass('Home')==true}"><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+            <li (click)="onSelect('Home');" routerLinkActive="active" [ngClass]="{'active':isActiveClass('Home')==true}"><a [routerLink]=" ['./'] "
+              routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="index.html">Dashboard</a></li>
                 <li><a href="index2.html">Dashboard2</a></li>
@@ -135,7 +136,7 @@
         <a data-toggle="tooltip" data-placement="top" title="Lock">
           <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
         </a>
-        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+        <a data-toggle="tooltip" data-placement="top" title="Logout" routerLink="/login">
           <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
         </a>
       </div>

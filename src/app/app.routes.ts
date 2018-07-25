@@ -7,10 +7,23 @@ import { ExpensecategoryComponent } from './expensecategory/expensecategory.comp
 import {MasterLayoutComponent} from './master-layout/master-layout.component'
 
 
-        export const appRoutes:Routes = [
-            { path: '', component:LoginComponent },
-            { path: 'expensecat', component:ExpensecategoryComponent,outlet:'LayoutOutlet'},
-            { path: 'home', component:HomeComponent, canActivate:[AuthGuard]},
+        export const appRoutes:Routes = [            
+            {
+                path:'',
+                component:MasterLayoutComponent,
+                children:[
+                    { 
+                        path: 'expensecat', 
+                        component:ExpensecategoryComponent,
+                    },
+                    { 
+                        path: '', 
+                        component:HomeComponent,
+                    },
+                ],
+                canActivate:[AuthGuard]
+            },
+            { path: 'login', component:LoginComponent },
             { path: '**', redirectTo:'/'}
         ];
     

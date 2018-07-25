@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public bodyClass:string;
+  constructor(private renderer:Renderer2) { }
 
   ngOnInit() {
+  }
+
+  toggleSidebar(){
+    this.bodyClass = document.body.className == 'nav-md' ? 'nav-sm' : 'nav-md';
+    this.renderer.removeClass(document.body,document.body.className);
+    this.renderer.addClass(document.body,this.bodyClass);
   }
 
 }

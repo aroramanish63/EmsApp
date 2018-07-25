@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       renderer.removeClass(document.body, document.body.className);
       renderer.addClass(document.body, 'login');
 
-      this.router.navigate([{ outlets: { bookPopup: [ 'update-book' ] }}]); 
+      this.router.navigate(['login']); 
    }
 
   ngOnInit() {
@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
   onLogin(){
     this.loading = true;
     console.log("In Login function");
-    console.log(this.model);
     this.authservice.login(this.model.username, this.model.password)
     .subscribe(data=>{
       console.log("In Login Component");
